@@ -18,10 +18,14 @@ outputs:
   output-one:
     description: 'Description of output-one'
   output-two:
-    description: 'Description of output-two'	
+    description: 'Description of output-two'
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_REPO:
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.input-one }}
     - ${{ inputs.input-two }}
+
